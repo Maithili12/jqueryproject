@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+<style>
+  #div1{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    display: none;
+  }
+  #div2{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    display: none;
+  }
+  #div3{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    display: none;
+  }
+  input{
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+
+ <!---add some text
+<h2>add some text</h2>
+<input type="text" name="addtext" id="addtext">
+<button id="btnadd">add</button>
+<ol>
+  
+</ol>
+<hr>-->
+<!--form-->
+<form method="POST" id="myForm"> 
+  <label>Username:</label>
+  <input type="text" name="fname" id="fname" ><br>
+  <label>Password:</label>
+  <input type="password" name="password" id="password"><br>
+  <button type="button" id="btnShow">Show Password</button>
+</form>
+<!--Bulb on off-->
+<img src="images/bulb off.jpg" id="bulb" >
+<button value="off" id="bulboff">off</button>
+<button value="on" id="bulbon">on</button>
+
+<!---script-->
+<script>
+  $(document).ready(function(){
+    
+    /* append script
+    $('#btnadd').click(function(){
+      var txt = $('#addtext').val()
+      $('ol').append(`<li id="list">${txt}<button id="btnremove">remove</button> </li>`);
+    });
+    
+    /* remove script
+    $('#btnremove').click(function(){
+      $('li').remove('#list');
+    });*/
+    /* show password */
+    $('#btnShow').click(function(){
+      var showPass = $('#password');
+      var showPassField = showPass.attr('type');
+      if(showPass.val()!='')
+      {
+        if(showPassField == 'password')
+        {
+          showPass.attr('type','text');
+          $(this).text('Hide Password');
+        }
+        else{
+          showPass.attr('type','password');
+          $(this).text('Show Password');
+        }
+      }
+      else{
+        alert("please enter password");
+      }
+    });
+  /* bulb on off*/
+ $('#bulboff').click(function(){
+  $('#bulb').attr("src","images/bulb off.jpg");
+  $('#bulb').css("background-image","url('images/bulb off.jpg')");
+ });
+ $('#bulbon').click(function(){
+  $('#bulb').attr("src","images/bulb on.jpg");
+  $('#bulb').css("background-image","url('images/bulb on.jpg')");
+ });
+ 
+  
+  });
+    
+</script>
+</body>
+</html>

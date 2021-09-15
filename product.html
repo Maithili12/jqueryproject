@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>product</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </head>
+    <style>
+        .container, .box{
+            background-color: antiquewhite;
+            border: 2px solid black;
+            padding: 10px;
+            margin-bottom: 5px;
+            width: 250px;
+        }
+        button{
+            margin: 10px 0;
+        }
+        #error{
+            color: red;
+            font-size: 16px;
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none;
+            
+        }
+        #display{
+            width:230px
+        }
+    </style>
+    <body>
+        
+     <div class="container">
+         <div>
+             <input type="text" name="product[]" value="">
+             <button id="add">Add</button>
+         </div>
+     </div>
+     <div class="box">
+        <input id="display" value="0" type="number" min="0" max="10"  ><br>
+        <p id="error"></p>
+        <button  id="inc">Increment</button>
+        <button  id="dec">Decrement</button>
+        <button  id="reset">Reset</button>
+    </div>
+    <!--- <form>
+         <label>Username:</label>
+         <input type="text" name="user"><br>
+         <label>Password:</label>
+         <input type="password" name="pass">
+         <button type="button" id="submit">Submit</button>
+     </form>
+     <a href="#" id="newfile">move to another file</a>-->
+    </body>
+    
+    <script src="products.js"></script>
+
+</html>

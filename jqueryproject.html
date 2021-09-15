@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>JQuery Project</title>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+
+<style>
+#more , #morelist{
+    display: none;
+}
+.image{
+    background: url(images/hp7.jpg)no-repeat;
+    position: relative;
+    width:100%;
+    height:500px;
+}
+.image-text{
+    position: absolute;
+    width:550px;
+    bottom:0;
+    padding: 30px 0 ;
+    background-color: black;
+    color: white;
+    font-size:20px;
+    text-align: center;
+    display: none;
+    
+}
+.images-slider .slider img{
+   
+    background-color: black;
+    width: 700px;
+    display: block;
+    margin: 0 auto;
+}
+.slider img{
+    width:100%;
+    height:500px;
+}
+.names{
+    color: red;
+}
+</style>
+</head>
+<body>
+  
+    <!--less more-->
+<p>Write Mail</p>
+<p>Inbox</p>
+<p>Send Mail</p>
+<p>Drafts</p>
+<div id="morelist">
+    <p>Chat</p>
+    <p>Spam</p>
+    <p>Trash</p>
+</div>
+<button id="more">More</button>
+<button id="less">Less</button>
+<!--Sliding text on image hover-->
+<!--<div class="image">
+    <div class="image-text">
+        Grey headphones<br>
+        this is most trending headphone in market
+    </div>
+</div>
+<div class="images_slider">
+    <div class="slider">
+        <img src="images/headphone_blue.png">
+    </div>
+    <div class="slider">
+        <img src="images/headphone_pink.png">
+    </div>
+    <div class="slider">
+        <img src="images/headphone_red.png">
+    </div>
+</div>-->
+<div>
+<p id="txtname">Maithili</p>
+<button id="add">Add color</button>
+<!--<button id="btntest">test</button>-->
+</div>
+<div>
+    <p id="data">cat, leopard, dog, tiger</p>
+    <input id="userval" name="user" type="text" placeholder="enter the value for pop">
+    <button type="button" id="pop">click for pop</button>
+</div>
+</body>
+
+<script>
+    $(document).ready(function() {
+       
+        /* less more */
+    $('#less , #more').click(function(){
+        if($('#morelist').is(':visible')){
+        $("#more").hide();
+		$("#less").show();
+
+	 } else {
+		$("#less").hide();
+        
+		$("#more").show();
+	 }
+     $('#morelist').slideToggle();
+
+    });
+    /* Sliding text on image hover*/
+    $('.image').hover(function(){
+        $('.image-text').slideToggle('slow');
+    });
+    /* imaage slider*/
+    /*$('.images_slider').slick();
+    });*/
+    /* text color*/
+    $('#add').click(function(){
+        $('#txtname').toggleClass('names');
+      
+        if($("#txtname").hasClass('names'))
+        {
+            $('#add').text("Remove color");
+        }
+        else{
+            $('#add').text("Add color");
+        }
+        
+    });
+
+    /*$('#btntest').click(function(){
+        i = 0;
+        while(i<10)
+        {
+            console.log(i)
+            $("body").appendTo('#txtname');
+            i++;
+        }
+    });*/
+    /* pop*/
+    
+    $('#pop').click(function(){
+        var array = ['cat', 'leopard', 'dog', 'tiger'];
+        $('#data').html(array.toString);
+        var user= $('#userval').val;
+        /*var regex = /[a-z]/gi ;
+        var result = array.match(regex);
+        console.log(result);*/
+     /*$.each(array, function(i , val){
+         if(val === user){
+             alert("find");
+         }
+        console.log( i + ": " + val );
+     })*/
+     
+     
+    });
+
+    });
+    
+    </script>
+
+
+</html>
